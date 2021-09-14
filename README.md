@@ -5,6 +5,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Functions
 * Register a user info
 * Connection with backend(Spring boot) using httpclient module
+* Login with JWT Token, Register-success 
 
 ## Skills
 * Angular(html, css, bootstrap, javascript, typescript)
