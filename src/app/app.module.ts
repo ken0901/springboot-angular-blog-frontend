@@ -9,13 +9,18 @@ import { RegisterComponent } from './component/auth/register/register.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './component/auth/login/login.component';
+import { RegisterSuccessComponent } from './component/auth/register-success/register-success.component';
+import { NgxWebstorageModule } from 'ngx-webstorage';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    LoginComponent,
+    RegisterSuccessComponent
   ],
   imports: [
     BrowserModule,
@@ -23,9 +28,12 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      {path:'register', component: RegisterComponent}
+      {path:'register', component: RegisterComponent},
+      {path:'login', component: LoginComponent},
+      {path:'register-success', component: RegisterSuccessComponent}
     ]),
-    HttpClientModule
+    HttpClientModule,
+    NgxWebstorageModule.forRoot() // past version - Ng2Webstorage.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
