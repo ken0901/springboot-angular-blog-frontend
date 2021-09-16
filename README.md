@@ -6,6 +6,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 * Register a user info
 * Connection with backend(Spring boot) using httpclient module
 * Login with JWT Token, Register-success 
+* Posts with TinyMCE Editor
+* JWT using public and private Key
 
 ## Skills
 * Angular(html, css, bootstrap, javascript, typescript)
