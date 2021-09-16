@@ -15,6 +15,8 @@ import { NgxWebstorageModule } from 'ngx-webstorage';
 import { AddPostComponent } from './component/add-post/add-post.component';
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { HttpClientInterceptor } from './http-client-interceptor';
+import { PostComponent } from './component/post/post.component';
+import { AuthGuard } from './guard/auth.guard';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { HttpClientInterceptor } from './http-client-interceptor';
     RegisterComponent,
     LoginComponent,
     RegisterSuccessComponent,
-    AddPostComponent
+    AddPostComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
@@ -32,11 +35,13 @@ import { HttpClientInterceptor } from './http-client-interceptor';
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
+      {path:'', component: HomeComponent},
       {path:'register', component: RegisterComponent},
       {path:'login', component: LoginComponent},
       {path:'register-success', component: RegisterSuccessComponent},
       {path:'home', component: HomeComponent},
-      {path:'add-post', component: AddPostComponent}
+      {path:'add-post', component: AddPostComponent, canActivate: [AuthGuard]},
+      {path:'post/:id', component: PostComponent}
     ]),
     HttpClientModule,
     NgxWebstorageModule.forRoot(), // past version - Ng2Webstorage.forRoot()
